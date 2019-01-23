@@ -65,7 +65,6 @@ public class OrderTopnStepOne {
 				context.write(beanlist.get(i), NullWritable.get());
 			}
 			
-			
 		}
 		
 	}
