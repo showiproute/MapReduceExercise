@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.apache.hadoop.io.WritableComparable;
 
+
 public class OrderBean implements WritableComparable<OrderBean>{
 	
 	/**
@@ -91,7 +92,8 @@ public class OrderBean implements WritableComparable<OrderBean>{
 	public void setAmountFee(float amountFee) {
 		this.amountFee = amountFee;
 	}
-
+	
+	
 	public void set(String orderId, String userId, String pdtName, float price, int number) {
 		
 		this.orderId = orderId;
@@ -138,7 +140,6 @@ public class OrderBean implements WritableComparable<OrderBean>{
 		out.writeUTF(this.pdtName);
 		out.writeFloat(this.price);
 		out.writeInt(this.number);
-		
 		
 	}
 

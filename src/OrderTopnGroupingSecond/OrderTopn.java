@@ -76,6 +76,7 @@ public class OrderTopn{
 		FileInputFormat.setInputPaths(job, new Path("F:\\Linuxsource\\mrdata\\ordergroup\\input"));
 		FileOutputFormat.setOutputPath(job, new Path("F:\\Linuxsource\\mrdata\\ordergroup\\output2"));
 		
+		job.setNumReduceTasks(1);
 		
 		boolean res = job.waitForCompletion(true);
 		System.exit(res?0:-1);
