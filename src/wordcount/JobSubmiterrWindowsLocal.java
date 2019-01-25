@@ -26,11 +26,17 @@ public class JobSubmiterrWindowsLocal {
 	    job.setMapOutputKeyClass(Text.class);
 	    job.setMapOutputValueClass(IntWritable.class);
 	    
+	    //设置maptask端的局部聚合逻辑类
+	    job.setCombinerClass(CombinerTask.class);
+	    
 	    job.setOutputKeyClass(Text.class);
 	    job.setOutputValueClass(IntWritable.class);
+	    
+
+	    
 	  
 	    FileInputFormat.setInputPaths(job, new Path("f:/Linuxsource/mrdata/wordcount/input"));
-	    FileOutputFormat.setOutputPath(job,new Path("f:/Linuxsource/mrdata/wordcount/output"));
+	    FileOutputFormat.setOutputPath(job,new Path("f:/Linuxsource/mrdata/wordcount/output2"));
 	    
 	    job.setNumReduceTasks(3);
 	    
