@@ -58,6 +58,8 @@ public class GroupingComparatorStepTwo {
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf);
 		
+		conf.setInt("top.n.value", 3);
+		
 		job.setJarByClass(GroupingComparatorStepTwo.class);
 		
 		job.setGroupingComparatorClass(PointTimesGoupingComparator.class);
