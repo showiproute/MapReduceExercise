@@ -77,7 +77,7 @@ public class JsonDataAnalysis {
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf);
 		
-		conf.setInt("top.n.value", 1);
+		conf.setInt("top.n.value", 3);
 		
 		job.setJarByClass(JsonDataAnalysis.class);
 		job.setMapperClass(JsonDataAnalysisMapper.class);
