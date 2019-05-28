@@ -18,5 +18,4 @@ public class OrderGroupingComparator extends WritableComparator{
 		
 		return o1.getOrderId().compareTo(o2.getOrderId());
 	}
-
 }

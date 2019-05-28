@@ -11,7 +11,10 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class OrderTopn{
 
@@ -73,14 +76,25 @@ public class OrderTopn{
 		job.setOutputKeyClass(OrderBean.class);
 		job.setOutputValueClass(NullWritable.class);
 		
+		//default:job提交的默认输入格式
+//		job.setInputFormatClass(TextInputFormat.class);
+		
+		//修改成
+//		job.setInputFormatClass(SequenceFileOutputFormat.class);
+		
+		//default : job提交的默认输出文件格式
+//		job.setOutputFormatClass(TextOutputFormat.class);
+		
+		//修改成		
+//		job.setOutputFormatClass(SequenceFileOutputFormat.class);
+		
 		FileInputFormat.setInputPaths(job, new Path("F:\\Linuxsource\\mrdata\\ordergroup\\input"));
-		FileOutputFormat.setOutputPath(job, new Path("F:\\Linuxsource\\mrdata\\ordergroup\\output2"));
+		FileOutputFormat.setOutputPath(job, new Path("F:\\Linuxsource\\mrdata\\ordergroup\\output-seq"));
 		
 		job.setNumReduceTasks(1);
 		
 		boolean res = job.waitForCompletion(true);
 		System.exit(res?0:-1);
-		
 		
 	}
 

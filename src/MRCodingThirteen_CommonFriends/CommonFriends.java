@@ -70,7 +70,6 @@ public class CommonFriends {
 					context.write(k,key);
 				}
 		}
-		
 	}
 	
 	public static void main(String[] args) throws Exception{

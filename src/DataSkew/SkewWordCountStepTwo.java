@@ -26,7 +26,7 @@ public class SkewWordCountStepTwo {
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
 			String[] fields = value.toString().split("-");
-			String word=fields[0];
+			String word=fields[0]; 
 			int num = Integer.parseInt(fields[1].split("\t")[1]);
 			
 			k.set(word);
